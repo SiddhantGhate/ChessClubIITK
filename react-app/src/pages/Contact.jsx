@@ -87,12 +87,12 @@ const Contact = () => {
   return (
     <div className="px-12 pb-20 max-w-7xl mx-auto">
       {/* Coordinators Section */}
-      <section className="mb-10 mt-12">
+      <section className="mb-20 mt-12">
         <div className="flex flex-col items-center mb-12 text-center">
           <h3 className="text-xs font-label uppercase tracking-[0.2em] text-primary mb-2">The Leadership</h3>
           <h2 className="text-5xl font-serif font-bold tracking-tighter text-on-surface">Coordinators</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {COORDINATORS.map(person => (
             <ContactCard key={person.id} person={person} />
           ))}
