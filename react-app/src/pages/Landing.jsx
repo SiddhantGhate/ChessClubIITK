@@ -44,6 +44,7 @@ const Landing = () => {
           <p className="text-lg text-on-surface-variant font-body mb-10 max-w-lg leading-relaxed mx-auto text-center">
             The intellectual heart of IIT Kanpur. Where tradition meets strategy, and every move is a testament to calculated brilliance. Join the elite echelon of campus thinkers.
           </p>
+        {/*
           <div className="flex items-center justify-center gap-6">
             {!isLoggedIn && (
               <button className="primary-gradient text-on-primary px-10 py-4 font-bold rounded-lg shadow-[0_10px_30px_rgba(212,175,55,0.2)] hover:scale-105 transition-transform">
@@ -51,10 +52,11 @@ const Landing = () => {
               </button>
             )}
           </div>
+        */}
         </motion.div>
       </section>
 
-      <section className="py-24 px-12 lg:px-20 grid grid-cols-12 gap-8">
+      <section className="py-24 px-12 lg:px-20 gap-8">
         <div className="col-span-12 lg:col-span-5 mb-12 lg:mb-0">
           <p className="text-primary font-label text-xs tracking-[0.3em] uppercase mb-4">Establishing Excellence</p>
           <h3 className="text-5xl font-serif mb-8 leading-tight">Beyond the 64 Squares</h3>

@@ -129,7 +129,7 @@ const Blogs = () => {
         ))}
       </div>
 
-      <footer className="bg-surface-container-lowest py-16 px-12 border-t border-outline-variant/10 mt-20 relative before:content-[''] before:absolute before:inset-0 before:bg-surface-container-lowest before:-mx-[100vw] before:z-[-1]">
+      {/*<footer className="bg-surface-container-lowest py-16 px-12 border-t border-outline-variant/10 mt-20 relative before:content-[''] before:absolute before:inset-0 before:bg-surface-container-lowest before:-mx-[100vw] before:z-[-1]">
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="max-w-xs mb-10 md:mb-0">
             <h6 className="text-xl font-serif italic text-primary mb-4">Chess Club IITK</h6>
@@ -171,7 +171,7 @@ const Blogs = () => {
           <span>© 2024 Chess Club IITK. Intellectual Property Reserved.</span>
           <span>Est. 1960</span>
         </div>
-      </footer>
+      </footer>*/}
     </div>
   );
 };
