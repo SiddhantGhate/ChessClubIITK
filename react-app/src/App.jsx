@@ -11,7 +11,7 @@ import BlogPost from './pages/BlogPost';
 import UserProfile from './pages/UserProfile';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
-{/*import Login from './pages/Login';*/}
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/user" element={<UserProfile />} />
-            {/*<Route path="/login" element={<Login />} />*/}
+            <Route path="/login" element={<Login />} />
           </Routes>
         </MainLayout>
       </Router>

@@ -11,7 +11,7 @@ const PRE_SCHEDULED_EVENTS = [
   
   // June 2026
   { id: 'pre-3', type: 'workshop', title: 'Secy Recruitment & All-Team Meet', location: 'Online', time: 'TBD', date: '2026-06-05' },
-  { id: 'pre-4', type: 'tournament', title: 'IITK Crazyhouse Chess Championship', location: 'chess.com', time: 'TBD', date: '2026-06-20' },
+  { id: 'pre-4', type: 'tournament', title: 'Fog of war tournament', location: 'chess.com', time: 'TBD', date: '2026-06-20' },
   
   // July 2026
   { id: 'pre-5', type: 'workshop', title: 'Orientation PPT & Intro Video', location: 'Online', time: 'TBD', date: '2026-07-15' },
