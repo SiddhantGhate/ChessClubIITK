@@ -2,6 +2,7 @@ import fresherImg from '../assets/fresher_league_recap_1775765383248.png';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import SliderMaskText from '../components/SliderMaskText';
+import chessboardImg from '../assets/chessboard.jpg';
 
 const Landing = () => {
   const { isLoggedIn } = useAuth();
@@ -10,16 +11,15 @@ const Landing = () => {
       {/* Section 1: Brand Intro */}
       <section className="relative h-[80vh] flex items-center justify-center px-12 lg:px-20 overflow-hidden bg-surface-container">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-primary/5 to-transparent"></div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="relative z-10 w-full text-center"
         >
-          <SliderMaskText 
+          <SliderMaskText
             text={`CHESS CLUB\nIITK`}
-            image="https://lh3.googleusercontent.com/aida-public/AB6AXuA0XUbyKBzENztVgAh6aESgPIC7XwA0lM9Q5EAQXcIzg4K-uwUBFeK--nCT2BIF19Gy98hGFmduCbjU072Gs6wdSSffKreD381eR-dywqyhYu7_qmk5xQpofN0NjZs2AK6MejHEcg0bm94T-rOPLlR9K-MLzX0fAoS7VP9rJUegBfctXasuLza8dxMuBk5h6mezyvE40_gQYvLiBnaZbkmtDz9LSZi8ggzl3Vv4cRH8E8pKetxseMMRcRgWk07GqrG9EO9M1HwvhmY"
-            className="text-7xl md:text-[14rem] font-bold tracking-tighter leading-[0.85] brightness-125 saturate-150"
+            className="text-7xl md:text-[14rem] font-bold tracking-wide leading-[0.85]"
           />
         </motion.div>
       </section>
@@ -30,8 +30,8 @@ const Landing = () => {
           <img alt="Chess Theme" className="w-full h-full object-cover opacity-30 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0XUbyKBzENztVgAh6aESgPIC7XwA0lM9Q5EAQXcIzg4K-uwUBFeK--nCT2BIF19Gy98hGFmduCbjU072Gs6wdSSffKreD381eR-dywqyhYu7_qmk5xQpofN0NjZs2AK6MejHEcg0bm94T-rOPLlR9K-MLzX0fAoS7VP9rJUegBfctXasuLza8dxMuBk5h6mezyvE40_gQYvLiBnaZbkmtDz9LSZi8ggzl3Vv4cRH8E8pKetxseMMRcRgWk07GqrG9EO9M1HwvhmY" />
           <div className="absolute inset-0 bg-gradient-to-b from-surface-container-lowest via-surface/40 to-surface"></div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -42,7 +42,8 @@ const Landing = () => {
             <span className="text-primary">Find the Move.</span>
           </h2>
           <p className="text-lg text-on-surface-variant font-body mb-10 max-w-lg leading-relaxed mx-auto text-center">
-            The intellectual heart of IIT Kanpur. Where tradition meets strategy, and every move is a testament to calculated brilliance. Join the elite echelon of campus thinkers.
+            The intellectual heart of IIT Kanpur.<br />
+            Where tradition meets strategy, and every move is a testament to calculated brilliance. Join the elite echelon of campus thinkers.
           </p>
         {/*
           <div className="flex items-center justify-center gap-6">
