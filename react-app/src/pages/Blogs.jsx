@@ -7,6 +7,15 @@ import endgameImg from '../assets/endgame_puzzle_1775765427614.png';
 import tournamentImg from '../assets/fide.png';
 
 const BLOG_POSTS = [
+   {
+    id: 1,
+    title: "Fresher's Chess League 2026: An Absolute Thriller!",
+    date: "April 02, 2026",
+    tag: "Event Recap",
+    excerpt: "Recapping the absolute hype surrounding the offline auctions in the Senate Hall, analyzing the intense Round Robin pool matches at the OAT, and spotlighting the brilliant knockout blunders that ultimately led the underdogs to gold memberships.",
+    author: "Tanmay Sahare",
+    image: fresherImg
+  },
   {
     id: 5,
     title: "IIT Kanpur's First FIDE-Rated Rapid Tournament: A New Chapter",
@@ -48,7 +57,7 @@ const BLOG_POSTS = [
 const Blogs = () => {
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   
-  const featuredDescription = "Recapping the absolute hype surrounding the offline auctions in the Senate Hall, analyzing the intense Round Robin pool matches at the OAT, and spotlighting the brilliant knockout blunders that ultimately led the underdogs to gold memberships.";
+  const featuredDescription = "IIT Kanpur steps onto the rated chess map with its first FIDE-rated rapid tournament, a 9-round Swiss event carrying a prize pool of INR 2,00,000.";
   const [displayedDesc, setDisplayedDesc] = useState("");
 
   useEffect(() => {
@@ -66,14 +75,17 @@ const Blogs = () => {
       <section className="relative mb-20 group mt-8">
         <div className="grid grid-cols-12 gap-0 overflow-hidden rounded-xl bg-surface-container-low border border-[#4d4635]/10">
           <div className="col-span-12 lg:col-span-7 h-[500px] overflow-hidden">
-            <img alt="Chess Strategy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={fresherImg} />
+            <img alt="IIT Kanpur FIDE-rated rapid tournament" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={tournamentImg} />
+
           </div>
           <div className="col-span-12 lg:col-span-5 p-12 flex flex-col justify-center bg-surface-container">
             <div className="flex items-center space-x-3 mb-6">
-              <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] font-label tracking-widest uppercase rounded-full">Event Recap</span>
-              <span className="text-on-surface-variant/40 text-[10px] font-label uppercase">8 Min Read</span>
+              <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] font-label tracking-widest uppercase rounded-full">Tournament News</span>
+              <span className="text-on-surface-variant/40 text-[10px] font-label uppercase">5 Min Read</span>
+
             </div>
-            <h2 className="text-5xl font-serif font-bold leading-tight mb-6 text-on-surface">Fresher's Chess League 2026: An Absolute Thriller!</h2>
+            <h2 className="text-5xl font-serif font-bold leading-tight mb-6 text-on-surface">IIT Kanpur's First FIDE-Rated Rapid Tournament: A New Chapter</h2>
+
             <p className="text-on-surface-variant font-body leading-relaxed mb-8 text-sm min-h-[80px]">
               {displayedDesc}
               <span className="animate-pulse border-r-2 border-primary ml-[2px] h-[1em] inline-block -mb-[2px]"></span>
@@ -84,11 +96,13 @@ const Blogs = () => {
                   <span className="material-symbols-outlined text-primary text-sm">auto_awesome</span>
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-on-surface">Tanmay Sahare</p>
-                  <p className="text-[10px] text-on-surface-variant">Tournament Coordinator</p>
+                  <p className="text-xs font-bold text-on-surface">Laksh Dhir</p>
+                  <p className="text-[10px] text-on-surface-variant">Coordinator, Chess Club IITK</p>
+
                 </div>
               </div>
-              <Link to="/blog/1" className="text-primary font-label text-xs uppercase tracking-widest border-b border-primary/30 pb-1 hover:border-primary transition-all">Read Recap</Link>
+              <Link to="/blog/5" className="text-primary font-label text-xs uppercase tracking-widest border-b border-primary/30 pb-1 hover:border-primary transition-all">Read Article</Link>
+
             </div>
           </div>
         </div>
