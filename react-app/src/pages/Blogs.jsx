@@ -153,81 +153,81 @@ const Blogs = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
-            <div className="col-span-2 sm:col-span-1">
-              <p className="text-[10px] font-label uppercase tracking-widest text-primary mb-6">
-                Connect
-              </p>
+            <div className="col-span-2 sm:col-span-1 text-right">
+  <p className="text-[10px] font-label uppercase tracking-widest text-primary mb-6">
+    Connect
+  </p>
 
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://www.instagram.com/chessiitk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
-                >
-                  <i className="fa-brands fa-instagram text-sm"></i>
-                </a>
+  <div className="flex flex-wrap gap-3 justify-end">
+    <a
+      href="https://www.instagram.com/chessiitk/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      className="px-4 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
+    >
+      Instagram
+    </a>
 
-                <a
-                  href="mailto:chessclub@iitk.ac.in"
-                  aria-label="Email"
-                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
-                >
-                  <span className="material-symbols-outlined text-sm">mail</span>
-                </a>
+    <a
+      href="mailto:chessclub@iitk.ac.in"
+      aria-label="Email"
+      className="px-4 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
+    >
+      Email
+    </a>
 
-                <a
-                  href="https://x.com/chessiitk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X"
-                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
-                >
-                  <i className="fa-brands fa-x-twitter text-sm"></i>
-                </a>
+    <a
+      href="https://x.com/chessiitk"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="X"
+      className="px-4 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
+    >
+      X
+    </a>
 
-                <a
-                  href="https://www.linkedin.com/company/chess-iitk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
-                >
-                  <i className="fa-brands fa-linkedin-in text-sm"></i>
-                </a>
+    <a
+      href="https://www.linkedin.com/company/chess-iitk/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+      className="px-4 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
+    >
+      LinkedIn
+    </a>
 
-                <a
-                  href="https://www.facebook.com/chessclubiitk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
-                >
-                  <i className="fa-brands fa-facebook-f text-sm"></i>
-                </a>
+    <a
+      href="https://www.facebook.com/chessclubiitk/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+      className="px-4 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
+    >
+      Facebook
+    </a>
 
-                <a
-                  href="https://www.chess.com/club/iitk-chess-club"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Chess.com"
-                  className="px-3 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
-                >
-                  Chess.com
-                </a>
+    <a
+      href="https://www.chess.com/club/iitk-chess-club"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chess.com"
+      className="px-4 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
+    >
+      Chess.com
+    </a>
 
-                <a
-                  href="https://www.threads.com/@chessiitk?xmt=AQG0WclpAXcX0l6MVRZkMQ6ltp7AQi8X1H4vyrFo6qXNahU"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Threads"
-                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
-                >
-                  <i className="fa-brands fa-threads text-sm"></i>
-                </a>
-              </div>
-            </div>
+    <a
+      href="https://www.threads.com/@chessiitk?xmt=AQG0WclpAXcX0l6MVRZkMQ6ltp7AQi8X1H4vyrFo6qXNahU"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Threads"
+      className="px-4 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
+    >
+      Threads
+    </a>
+  </div>
+</div>
 
           </div>
         </div>
