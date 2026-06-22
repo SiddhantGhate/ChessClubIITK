@@ -85,9 +85,6 @@ const Blogs = () => {
             </p>
             <div className="flex items-center justify-between mt-auto">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-primary text-sm">auto_awesome</span>
-                </div>
                 <div>
                   <p className="text-xs font-bold text-on-surface">Laksh Dhir</p>
                   <p className="text-[10px] text-on-surface-variant">Coordinator, Chess Club IITK</p>
