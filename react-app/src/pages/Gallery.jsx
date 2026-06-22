@@ -216,6 +216,7 @@ const Gallery = () => {
   const containerHeight = cardHeight + 60;
 
   return (
+    <div>
     <div className="px-6 md:px-12 pb-20 max-w-7xl mx-auto min-h-screen">
       <header className="py-16 text-center">
         <motion.p
@@ -469,7 +470,10 @@ const Gallery = () => {
       </AnimatePresence>
 
       {/* Footer Decoration */}
-      <footer className="bg-surface-container-lowest border-t border-outline-variant/10 px-12 py-16 lg:px-20">
+      
+
+    </div>
+    <footer className="bg-surface-container-lowest border-t border-outline-variant/10 px-12 py-16 lg:px-20">
   <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
     <div className="col-span-1 md:col-span-2">
       <h4 className="mb-4 text-xl font-serif text-primary">Chess Club IITK</h4>
@@ -595,9 +599,7 @@ const Gallery = () => {
     <p>© 2026 IIT Kanpur Chess Club. All Rights Reserved.</p>
     <p>Designed for the Intellectual Elite</p>
   </div>
-</footer>
-
-    </div>
+</footer></div>
   );
 };
 

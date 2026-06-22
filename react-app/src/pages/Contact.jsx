@@ -297,6 +297,7 @@ const ContactCard = ({ person }) => (
 
 const Contact = () => {
   return (
+    <div>
     <div className="px-12 pb-20 max-w-7xl mx-auto">
       {/* Coordinators Section */}
       <section className="mb-20 mt-12">
@@ -325,7 +326,11 @@ const Contact = () => {
       </section>
 
       {/* Footer matching Blogs.jsx */}
-      <footer className="bg-surface-container-lowest border-t border-outline-variant/10 px-12 py-16 lg:px-20">
+     
+
+
+    </div>
+     <footer className="bg-surface-container-lowest border-t border-outline-variant/10 px-12 py-16 lg:px-20">
   <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
     <div className="col-span-1 md:col-span-2">
       <h4 className="mb-4 text-xl font-serif text-primary">Chess Club IITK</h4>
@@ -452,10 +457,7 @@ const Contact = () => {
     <p>Designed for the Intellectual Elite</p>
   </div>
 </footer>
-
-
-
-    </div>
+</div>
   );
 }
 
