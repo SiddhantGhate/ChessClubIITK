@@ -120,7 +120,7 @@ const Footer = () => {
             {/* Column 2 (4 items) */}
             <div className="flex flex-col gap-3">
               <a
-                href="https://discord.gg/chessiitk"
+                href="https://discord.com/channels/845027863392026685/856260758781165620"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-9 w-full items-center justify-start rounded-full border border-outline-variant/30 px-4 text-xs font-medium text-on-surface-variant transition-all hover:border-primary hover:text-primary gap-2"
