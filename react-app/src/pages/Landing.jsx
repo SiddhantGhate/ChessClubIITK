@@ -44,10 +44,10 @@ const Landing = () => {
         <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[200px] bg-radial from-yellow-600/5 to-transparent blur-[160px] pointer-events-none z-0"></div>
 
         {/* Elegant chess board subtle border line frame around the hero */}
-        <div className="absolute inset-x-8 md:inset-x-12 lg:inset-x-20 top-8 bottom-0 border-x border-t border-zinc-800/40 pointer-events-none z-0">
+        {/* {<div className="absolute inset-x-8 md:inset-x-12 lg:inset-x-20 top-8 bottom-0 border-x border-t border-zinc-800/40 pointer-events-none z-0">
           <div className="absolute top-0 left-0 w-2 h-2 border-l border-t border-[#d4af37]"></div>
           <div className="absolute top-0 right-0 w-2 h-2 border-r border-t border-[#d4af37]"></div>
-        </div>
+        </div>} */}
 
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
