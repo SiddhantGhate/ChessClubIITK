@@ -85,8 +85,8 @@ const BlogPost = () => {
               <span className="material-symbols-outlined text-primary text-[20px] leading-none">emoji_events</span>
             </div>
             <div>
-              <p className="text-sm font-bold text-on-surface leading-tight">Laksh Dhir</p>
-              <p className="text-[10px] text-on-surface-variant font-label uppercase leading-tight">
+              <p className="text-sm font-bold text-on-surface leading-none m-0">Laksh Dhir</p>
+              <p className="text-[10px] text-on-surface-variant font-label uppercase leading-none m-0">
                 Coordinator, Chess Club IITK
               </p>
             </div>
