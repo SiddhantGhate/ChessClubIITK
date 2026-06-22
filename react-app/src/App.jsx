@@ -12,11 +12,13 @@ import UserProfile from './pages/UserProfile';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Login from './pages/Login';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop />
         <MainLayout>
           <Routes>
             <Route path="/" element={<Landing />} />
