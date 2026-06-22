@@ -153,33 +153,82 @@ const Blogs = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-12">
-            <div>
-              <p className="text-[10px] font-label uppercase tracking-widest text-primary mb-6">Explore</p>
-              <ul className="space-y-3 text-xs text-on-surface-variant">
-                <li><span className="hover:text-on-surface cursor-pointer">Archive</span></li>
-                <li><span className="hover:text-on-surface cursor-pointer">Theory</span></li>
-                <li><span className="hover:text-on-surface cursor-pointer">Rankings</span></li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-[10px] font-label uppercase tracking-widest text-primary mb-6">Club</p>
-              <ul className="space-y-3 text-xs text-on-surface-variant">
-                <li><span className="hover:text-on-surface cursor-pointer">About Us</span></li>
-                <li><span className="hover:text-on-surface cursor-pointer">Constitution</span></li>
-                <li><span className="hover:text-on-surface cursor-pointer">Contact</span></li>
-              </ul>
-            </div>
             <div className="col-span-2 sm:col-span-1">
-              <p className="text-[10px] font-label uppercase tracking-widest text-primary mb-6">Connect</p>
-              <div className="flex space-x-4">
-                <span className="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer">
-                  <span className="material-symbols-outlined text-sm">share</span>
-                </span>
-                <span className="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer">
+              <p className="text-[10px] font-label uppercase tracking-widest text-primary mb-6">
+                Connect
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://www.instagram.com/chessiitk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
+                >
+                  <i className="fa-brands fa-instagram text-sm"></i>
+                </a>
+
+                <a
+                  href="mailto:chessclub@iitk.ac.in"
+                  aria-label="Email"
+                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
+                >
                   <span className="material-symbols-outlined text-sm">mail</span>
-                </span>
+                </a>
+
+                <a
+                  href="https://x.com/chessiitk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X"
+                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
+                >
+                  <i className="fa-brands fa-x-twitter text-sm"></i>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/company/chess-iitk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
+                >
+                  <i className="fa-brands fa-linkedin-in text-sm"></i>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/chessclubiitk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
+                >
+                  <i className="fa-brands fa-facebook-f text-sm"></i>
+                </a>
+
+                <a
+                  href="https://www.chess.com/club/iitk-chess-club"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chess.com"
+                  className="px-3 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer text-xs font-semibold"
+                >
+                  Chess.com
+                </a>
+
+                <a
+                  href="https://www.threads.com/@chessiitk?xmt=AQG0WclpAXcX0l6MVRZkMQ6ltp7AQi8X1H4vyrFo6qXNahU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Threads"
+                  className="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center hover:border-primary text-on-surface-variant hover:text-primary transition-all cursor-pointer"
+                >
+                  <i className="fa-brands fa-threads text-sm"></i>
+                </a>
               </div>
             </div>
+
           </div>
         </div>
         <div className="mt-16 pt-8 border-t border-outline-variant/5 flex justify-between items-center text-[10px] font-label uppercase tracking-widest text-on-surface-variant/30">
