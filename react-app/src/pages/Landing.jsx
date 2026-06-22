@@ -76,7 +76,7 @@ const Landing = () => {
             className="mt-10 flex flex-col items-center gap-2"
           >
             <div className="w-1.5 h-1.5 bg-[#d4af37] rounded-full animate-pulse"></div>
-            <span className="text-[11px] uppercase tracking-[0.4em] text-[#e5e2e1]/40 font-mono">
+            <span className="text-[15px] uppercase tracking-[0.4em] text-[#e5e2e1]/40 font-mono">
               The Gymnasium of Campus Minds
             </span>
           </motion.div>
