@@ -156,22 +156,6 @@ const Blogs = () => {
       <p className="mb-6 max-w-sm text-on-surface-variant">
         The official digital portal for the IIT Kanpur Chess Club. Archiving brilliance since 2007.
       </p>
-      <div className="flex gap-4">
-        <a
-          href="https://www.chess.com/club/iitk-chess-club"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-surface-container transition-colors hover:bg-primary hover:text-on-primary"
-        >
-          <span className="material-symbols-outlined">public</span>
-        </a>
-        <a
-          href="mailto:chessclub@iitk.ac.in"
-          className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-surface-container transition-colors hover:bg-primary hover:text-on-primary"
-        >
-          <span className="material-symbols-outlined">mail</span>
-        </a>
-      </div>
     </div>
 
     <div>
