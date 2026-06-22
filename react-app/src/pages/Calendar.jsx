@@ -171,7 +171,7 @@ const Calendar = () => {
     <div className="p-8 h-screen flex flex-col relative overflow-hidden bg-surface text-on-surface">
       <div className="mb-6 flex flex-col justify-between relative z-10 shrink-0">
         <div className="max-w-2xl">
-          <h2 className="text-4xl font-serif text-on-surface leading-tight">Mastering the <span className="italic text-primary">Tides of Time</span></h2>
+          <h2 className="text-4xl font-serif text-on-surface leading-tight">Mastering the <span className=" text-primary">Tides of Time</span></h2>
           <p className="mt-2 text-on-surface-variant/80 text-base font-light leading-relaxed">View the collective assembly of the IITK Chess Community's upcoming stratagems, workshops, and championship cycles.</p>
         </div>
       </div>

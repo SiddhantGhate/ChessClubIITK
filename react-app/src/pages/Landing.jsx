@@ -125,7 +125,7 @@ const Landing = () => {
             <p>From high-stakes inter-IIT tournaments to late-night blitz sessions in the Hall of Residence, we foster an environment where every pawn has the potential to become a queen.</p>
           </div>
           <div className="mt-12 p-8 bg-surface-container-low border-l-4 border-primary">
-            <p className="text-xl font-serif italic text-on-surface -mt-4 mb-4">“ Chess is the gymnasium of the mind. ”</p>
+            <p className="text-xl font-serif text-on-surface -mt-4 mb-4">“ Chess is the gymnasium of the mind. ”</p>
             <cite className="text-sm font-label text-on-surface-variant tracking-widest uppercase">— IITK Grandmaster Series</cite>
           </div>
         </div>
@@ -141,7 +141,7 @@ const Landing = () => {
           </div>
           <motion.div className="w-full md:w-1/2">
             <h3 className="text-xs font-label text-primary tracking-[0.4em] uppercase mb-4">Next Event</h3>
-            <h2 className="text-5xl font-serif mb-6 italic">Fresher's Chess League</h2>
+            <h2 className="text-5xl font-serif mb-6">Fresher's Chess League</h2>
             <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">Experience the thrill of OTB chess! An exclusive 8-player team tournament kicking off with live offline auctions. Fight through the group pools to secure the top knockout spots!</p>
             <ul className="space-y-4 mb-10">
               <li className="flex items-center gap-4 text-on-surface">
@@ -164,7 +164,7 @@ const Landing = () => {
       <footer className="bg-surface-container-lowest py-16 px-12 lg:px-20 border-t border-outline-variant/10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
-            <h4 className="text-xl font-serif italic text-primary mb-4">Chess Club IITK</h4>
+            <h4 className="text-xl font-serif text-primary mb-4">Chess Club IITK</h4>
             <p className="text-on-surface-variant max-w-sm mb-6">The official digital portal for the IIT Kanpur Chess Club. Archiving brilliance since 2007.</p>
             <div className="flex gap-4">
               <span className="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary transition-colors hover:text-on-primary cursor-pointer">

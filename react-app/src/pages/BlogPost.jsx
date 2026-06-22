@@ -52,12 +52,11 @@ const BlogPost = () => {
 
           <div className="my-12 p-8 bg-surface-container-low border border-outline-variant/15 rounded-xl">
             <h4 className="text-primary font-label text-xs uppercase tracking-widest mb-4">Tournament Overview</h4>
-            <p className="text-sm font-serif italic m-0">Date: February 7, 2026. Venue: Yoga Hall, New SAC, IIT Kanpur. Format: 9-round Swiss. Time control: 10+5 rapid. Prize pool: INR 2,00,000.</p>
+            <p className="text-sm font-serif m-0">Date: February 7, 2026. Venue: Yoga Hall, New SAC, IIT Kanpur. Format: 9-round Swiss. Time control: 10+5 rapid. Prize pool: INR 2,00,000.</p>
           </div>
 
           <p>We look forward to sharing a positive and memorable chess experience with all participants. Till then, Happy Chessing!</p>
 
-          <p className="text-sm text-on-surface-variant/70">Based on reporting by ChessBase India.</p>
         </article>
 
         <div className="mt-20 border-t border-outline-variant/15 pt-10 flex items-center justify-between">
@@ -65,9 +64,6 @@ const BlogPost = () => {
               <span className="material-symbols-outlined text-sm">arrow_back</span>
               Back to Archive
           </Link>
-          <a href="https://www.chessbase.in/news/first-fide-rated-rapid-chess-tournament-at-iitk" target="_blank" rel="noreferrer" className="text-primary text-sm font-label uppercase tracking-widest border-b border-primary/30 pb-1 hover:border-primary transition-all">
-            Source
-          </a>
         </div>
       </div>
     );
@@ -130,7 +126,7 @@ const BlogPost = () => {
         
         <div className="my-12 p-8 bg-surface-container-low border border-outline-variant/15 rounded-xl">
           <h4 className="text-primary font-label text-xs uppercase tracking-widest mb-4">The Spoils of War</h4>
-          <p className="text-sm font-serif italic m-0">Congratulations to the winning team for securing the coveted 8 Gold Memberships! Furthermore, we distributed Mama Mio Discount coupons to the top 50 participants, ensuring nobody went home empty-handed after such an incredible display of intellectual stamina.</p>
+          <p className="text-sm font-serif m-0">Congratulations to the winning team for securing the coveted 8 Gold Memberships! Furthermore, we distributed Mama Mio Discount coupons to the top 50 participants, ensuring nobody went home empty-handed after such an incredible display of intellectual stamina.</p>
         </div>
 
         <p>If you missed this event, don't worry! Keep grinding your tactics, analyzing your blunders, and we will see you back on the board for the upcoming IITK Grand Swiss qualifiers!</p>

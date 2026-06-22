@@ -229,7 +229,7 @@ const Gallery = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-6xl font-serif italic mb-8"
+          className="text-6xl font-serif mb-8"
         >
           The Gallery of <div className="text-primary">Chess Club IITK</div>
         </motion.h1>
@@ -386,7 +386,7 @@ const Gallery = () => {
           </div>
         ) : (
           /* Empty State */
-          <div className="py-20 text-center text-on-surface-variant/50 italic">
+          <div className="py-20 text-center text-on-surface-variant/50 ">
             No captures found in this archive yet.
           </div>
         )}
