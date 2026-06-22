@@ -88,7 +88,7 @@ const Blogs = () => {
                 <div>
                   <p className="text-xs font-bold text-on-surface">Laksh Dhir</p>
                   <p className="text-[10px] text-on-surface-variant">Coordinator, Chess Club IITK</p>
-
+    
                 </div>
               </div>
               <Link to="/blog/5" className="text-primary font-label text-xs uppercase tracking-widest border-b border-primary/30 pb-1 hover:border-primary transition-all">Read Article</Link>
