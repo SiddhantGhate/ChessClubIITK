@@ -6,15 +6,41 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(''); // Added to show incorrect password messages
+  
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Dummy authentication
-    if (email && password) {
-      login();
-      navigate('/');
+    setError('');
+
+    try {
+      // Talk to your local Python backend
+      const response = await fetch('http://127.0.0.1:5000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          email: email, 
+          password: password 
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        // This catches the "Invalid email or password" error from Python
+        setError(data.error || 'Failed to login');
+      } else {
+        // Success! Log the user in through your Context and send them home
+        login(data.user); // Passing the user data to your context
+        navigate('/');
+      }
+    } catch (err) {
+      console.error("Login Error:", err);
+      setError('Cannot connect to the server. Is your Python backend running?');
     }
   };
 
@@ -38,6 +64,14 @@ const Login = () => {
             Log in with your IITK credentials to manage your events, profile, and matches.
           </p>
         </div>
+
+        {/* Display error messages right above the form */}
+        {error && (
+          <div className="text-red-500 text-sm text-center font-semibold bg-red-500/10 p-3 rounded-lg">
+            {error}
+          </div>
+        )}
+
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
           <div className="space-y-5 rounded-md shadow-sm">
             <div>
@@ -79,6 +113,15 @@ const Login = () => {
                   </span>
                 </button>
               </div>
+              
+              {/* --- FORGOT PASSWORD LINK ADDED HERE --- */}
+              <div className="flex justify-end mt-2 mb-4">
+                <Link to="/forgot-password" className="text-xs font-bold text-primary hover:underline transition-all">
+                  Forgot your password?
+                </Link>
+              </div>
+              {/* --------------------------------------- */}
+
             </div>
           </div>
 

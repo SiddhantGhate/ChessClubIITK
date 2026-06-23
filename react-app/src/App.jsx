@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/user" element={<UserProfile />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
         </MainLayout>
       </Router>
