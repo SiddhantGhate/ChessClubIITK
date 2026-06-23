@@ -312,6 +312,7 @@ const BlogPost = () => {
                 <p className="text-xs text-on-surface-variant/80 text-center mt-3 font-label uppercase tracking-wider">
                   Fresher's Chess League 2025
                 </p>
+              </div>
             </div>
           </div>
 
