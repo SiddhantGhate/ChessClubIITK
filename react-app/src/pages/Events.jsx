@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 export const OFFICIAL_EVENTS = [
   {
     id: 1,
-    title: "League of Legends 6.0",
+    title: "NEW League of Legends 6.0",
     date: "August 7, 2026",
     tag: "Tournament",
     time: "Multiple Days",
