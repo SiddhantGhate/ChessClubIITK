@@ -48,8 +48,8 @@ const BLOG_POSTS = [
     date: "February 15, 2026",
     tag: "Tournament News",
     excerpt: "Top seed IM Anuj Shrivatri wins SBI GIC Fide Rated Rapid Tournament 2026 at IIT Kanpur. Anuj scored 8/9 points to secure the victory. He was leading the event with 8/8 points going into the 9th round.",
-    author: "Devansh Singh",
-    authorRole: "Author, ChessBase India",
+    author: "Laksh Dhir",
+    authorRole: "Coordinator, Chess Club IITK",
     readTime: "6 Min Read",
     image: winnerImg
   },
