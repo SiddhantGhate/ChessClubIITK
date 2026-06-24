@@ -18,7 +18,7 @@ const ViewDayModal = ({ isOpen, onClose, dateStr, events, onEditClick }) => {
         className="absolute inset-0 bg-[#0e0e0e]/80 backdrop-blur-sm"
         onClick={onClose}
       ></div>
-      <div className="bg-[#1c1b1b] border border-[#4d4635]/20 rounded-xl w-full max-w-sm relative z-10 shadow-2xl flex flex-col max-h-[80vh]">
+      <div className="bg-[#1c1b1b] border border-[#4d4635]/20 rounded-xl w-[calc(100%-2rem)] sm:w-full max-w-sm relative z-10 shadow-2xl flex flex-col max-h-[80vh]">
         <div className="flex items-center justify-between p-6 border-b border-outline-variant/10 shrink-0">
           <h2 className="text-xl font-serif text-on-surface">{formattedDate}</h2>
           <button onClick={onClose} className="text-on-surface-variant hover:text-error transition-colors outline-none">

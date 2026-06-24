@@ -91,23 +91,23 @@ const Blogs = () => {
 
   return (
     <div>
-    <div className="px-12 pb-20 max-w-7xl mx-auto">
+    <div className="px-4 sm:px-6 md:px-12 pb-20 max-w-7xl mx-auto">
       {featuredPost && (
-        <section className="relative mb-20 mt-8">
+        <section className="relative mb-12 sm:mb-20 mt-8">
           <Link 
             to={`/blog/${featuredPost.id}`}
             className="block overflow-hidden rounded-xl bg-surface-container-low border border-[#4d4635]/10 hover:border-outline-variant/20 transition-all duration-300 group cursor-pointer"
           >
             <div className="grid grid-cols-12 gap-0">
-              <div className="col-span-12 lg:col-span-7 h-[600px] overflow-hidden">
+              <div className="col-span-12 lg:col-span-7 h-[300px] sm:h-[450px] lg:h-[600px] overflow-hidden">
                 <img alt={featuredPost.title} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" src={featuredPost.image} />
               </div>
-              <div className="col-span-12 lg:col-span-5 p-12 flex flex-col justify-center bg-surface-container">
+              <div className="col-span-12 lg:col-span-5 p-6 sm:p-12 flex flex-col justify-center bg-surface-container">
                 <div className="flex items-center space-x-3 mb-6">
                   <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] font-label tracking-widest uppercase rounded-full">{featuredPost.tag}</span>
                   <span className="text-on-surface-variant/40 text-[10px] font-label uppercase">{featuredPost.readTime || "5 Min Read"}</span>
                 </div>
-                <h2 className="text-5xl font-serif font-bold leading-tight mb-6 text-on-surface group-hover:text-primary transition-colors">{featuredPost.title}</h2>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold leading-tight mb-6 text-on-surface group-hover:text-primary transition-colors">{featuredPost.title}</h2>
                 <p className="text-on-surface-variant font-body leading-relaxed mb-8 text-sm min-h-[80px]">
                   {displayedDesc}
                   <span className="animate-pulse border-r-2 border-primary ml-[2px] h-[1em] inline-block -mb-[2px]"></span>
@@ -127,7 +127,7 @@ const Blogs = () => {
         </section>
       )}
 
-      <div className={`flex items-end justify-between mb-12 ${viewMode === 'list' ? 'max-w-4xl mx-auto' : ''}`}>
+      <div className={`flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 ${viewMode === 'list' ? 'max-w-4xl mx-auto' : ''}`}>
         <div>
           <h3 className="text-xs font-label uppercase tracking-[0.2em] text-primary mb-2">The Archive</h3>
           <h4 className="text-4xl font-serif font-bold">Latest Dispatches</h4>

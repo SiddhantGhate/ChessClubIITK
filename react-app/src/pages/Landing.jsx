@@ -85,7 +85,7 @@ const Landing = () => {
       </section>
 
       {/* Section 2: Core Slogan */}
-      <section className="relative min-h-screen flex items-center justify-center px-12 lg:px-20 overflow-hidden bg-surface-container-lowest">
+      <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-20 overflow-hidden bg-surface-container-lowest">
         <div className="absolute inset-0 z-0">
           <img alt="Chess Theme" className="w-full h-full object-cover opacity-30 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0XUbyKBzENztVgAh6aESgPIC7XwA0lM9Q5EAQXcIzg4K-uwUBFeK--nCT2BIF19Gy98hGFmduCbjU072Gs6wdSSffKreD381eR-dywqyhYu7_qmk5xQpofN0NjZs2AK6MejHEcg0bm94T-rOPLlR9K-MLzX0fAoS7VP9rJUegBfctXasuLza8dxMuBk5h6mezyvE40_gQYvLiBnaZbkmtDz9LSZi8ggzl3Vv4cRH8E8pKetxseMMRcRgWk07GqrG9EO9M1HwvhmY" />
           <div className="absolute inset-0 bg-gradient-to-b from-surface-container-lowest via-surface/40 to-surface"></div>
@@ -97,7 +97,7 @@ const Landing = () => {
           viewport={{ once: true }}
           className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center"
         >
-          <h2 className="text-6xl md:text-8xl font-serif mb-8 leading-tight">
+          <h2 className="text-4xl sm:text-6xl md:text-8xl font-serif mb-8 leading-tight">
             Silence the Noise.<br />
             <span className="text-primary">Find the Move.</span>
           </h2>
@@ -122,17 +122,17 @@ const Landing = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-        className="py-24 px-12 lg:px-20 gap-8"
+        className="py-16 md:py-24 px-6 md:px-12 lg:px-20 grid grid-cols-12 gap-8"
       >
         <div className="col-span-12 lg:col-span-5 mb-12 lg:mb-0">
           <p className="text-primary font-label text-xs tracking-[0.3em] uppercase mb-4">Establishing Excellence</p>
-          <h3 className="text-5xl font-serif mb-8 leading-tight">Beyond the 64 Squares</h3>
-          <div className="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-serif mb-8 leading-tight">Beyond the 64 Squares</h3>
+          <div className="space-y-6 text-on-surface-variant leading-relaxed text-base sm:text-lg">
             <p>Founded on the principles of logic and unwavering focus, Chess Club IITK is not merely a sports body. We are a collective of minds dedicated to the pursuit of objective truth within the confines of the board.</p>
             <p>From high-stakes inter-IIT tournaments to late-night blitz sessions in the Hall of Residence, we foster an environment where every pawn has the potential to become a queen.</p>
           </div>
           <div className="mt-12 p-8 bg-surface-container-low border-l-4 border-primary">
-            <p className="text-xl font-serif text-on-surface -mt-4 mb-4">“ Chess is the gymnasium of the mind. ”</p>
+            <p className="text-lg sm:text-xl font-serif text-on-surface -mt-4 mb-4">“ Chess is the gymnasium of the mind. ”</p>
             <cite className="text-sm font-label text-on-surface-variant tracking-widest uppercase">— IITK Grandmaster Series</cite>
           </div>
         </div>
@@ -140,16 +140,16 @@ const Landing = () => {
         </div>
       </motion.section>
 
-      <motion.section className="py-24 px-12 lg:px-20 bg-surface-container-lowest">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+      <motion.section className="py-16 md:py-24 px-6 md:px-12 lg:px-20 bg-surface-container-lowest">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="w-full md:w-1/2 aspect-square rounded-xl overflow-hidden shadow-2xl relative">
             <img alt="Tournament" className="w-full h-full object-cover" src={fresherImg} />
             <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
           </div>
           <motion.div className="w-full md:w-1/2">
             <h3 className="text-xs font-label text-primary tracking-[0.4em] uppercase mb-4">Next Event</h3>
-            <h2 className="text-5xl font-serif mb-6">Fresher's Chess League</h2>
-            <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">Experience the thrill of OTB chess! An exclusive 8-player team tournament kicking off with live offline auctions. Fight through the group pools to secure the top knockout spots!</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif mb-6">Fresher's Chess League</h2>
+            <p className="text-on-surface-variant text-base sm:text-lg mb-8 leading-relaxed">Experience the thrill of OTB chess! An exclusive 8-player team tournament kicking off with live offline auctions. Fight through the group pools to secure the top knockout spots!</p>
             <ul className="space-y-4 mb-10">
               <li className="flex items-center gap-4 text-on-surface">
                 <span className="material-symbols-outlined text-primary">event</span>
