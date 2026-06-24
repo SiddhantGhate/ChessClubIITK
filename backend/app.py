@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask_cors import CORS
 from dotenv import load_dotenv
+from config.db import get_db_connection
 
 # Load your local .env file BEFORE anything else
 load_dotenv()
@@ -29,3 +30,12 @@ if __name__ == "__main__":
 @app.route("/health")
 def health():
     return {"status": "ok"}
+
+
+
+@app.route("/db-test")
+def db_test():
+    conn = get_db_connection()
+    conn.close()
+    return {"database": "connected"}
+
