@@ -12,7 +12,12 @@ from routes.auth import auth_bp
 app = Flask(__name__)
 
 # Allow your local React app to connect
-CORS(app)
+CORS(
+    app,
+    origins=[
+        "https://chess-club-iitk-myfork.vercel.app/"
+    ]
+)
 
 app.register_blueprint(auth_bp, url_prefix='/api')
 
