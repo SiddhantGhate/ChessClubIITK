@@ -11,7 +11,9 @@ import BlogPost from './pages/BlogPost';
 import UserProfile from './pages/UserProfile';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
+import Signup from './pages/Signup';
 import Login from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -30,7 +32,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/user" element={<UserProfile />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
           </Routes>
         </MainLayout>
       </Router>
