@@ -12,6 +12,7 @@ export const OFFICIAL_EVENTS = [
   tag: "Tournament",
   time: "9:00 PM Onwards",
   location: "chess.com",
+  format: "Fog of War Chess (3+0 Qualifying / 3+2 Knockouts)",
   shortDesc:
     "A unique chess variant where players cannot see all of their opponent's pieces. Strategy, intuition, and a bit of luck will decide the winner.",
 
@@ -36,9 +37,9 @@ export const OFFICIAL_EVENTS = [
     id: 1,
     title: "League of Legends 6.0",
     date: "August 7, 2026",
-    tag: "Tournament",
     time: "Multiple Days",
     location: "chess.com",
+    format: "4-Player Team Blitz (3+2 Qualifiers / 5+0 Knockouts)",
     shortDesc:
       "An open-for-all 4-player team event. Qualifiers start August 7th with the best advancing to knockouts!",
     fullDesc:
@@ -57,6 +58,7 @@ export const OFFICIAL_EVENTS = [
     tag: "Tournament",
     time: "Multiple Days",
     location: "Senate Hall & OAT",
+    format: "8-Player Team OTB (Auctions + Pool Stages 10+5)",
     shortDesc:
       "An 8-player team OTB tournament featuring offline auctions, pools, and knockouts!",
     fullDesc:
@@ -75,6 +77,7 @@ export const OFFICIAL_EVENTS = [
     tag: "Tournament",
     time: "Multiple Days",
     location: "Hall 3 Mess",
+    format: "Individual OTB (7-Round Swiss Rapid 10+5)",
     shortDesc:
       "A 7-round Swiss OTB tournament. The gateway to the Candidates and the Chess Cup!",
     fullDesc:
@@ -95,6 +98,7 @@ export const OFFICIAL_EVENTS = [
   tag: "Tournament",
   time: "TBD",
   location: "chess.com",
+  format: "Individual Online (Blitz 3+1 / Bullet 1+1)",
   shortDesc:
     "The ultimate battle of speed and precision. Compete in blitz and bullet formats to become the Speed Chess Champion of IITK!",
   fullDesc:
@@ -120,6 +124,7 @@ export const OFFICIAL_EVENTS = [
   tag: "Tournament",
   time: "9:00 AM Onwards",
   location: "IIT Kanpur Campus, Uttar Pradesh, India",
+  format: "FIDE Rated OTB (9-Round Swiss Rapid 10+5)",
   shortDesc:
     "The first-ever FIDE Rated Chess Tournament hosted by Chess Club IITK, featuring 9 Swiss rounds and a ₹2,00,000 prize pool.",
 
@@ -144,6 +149,7 @@ export const OFFICIAL_EVENTS = [
   tag: "Tournament",
   time: "7:00 PM Onwards",
   location: "Online",
+  format: "Team Online (League Stages + Playoffs)",
   shortDesc:
     "The flagship premier league of Chess Club IITK featuring top players, elite competition, and a massive ₹9+ Lakhs prize pool.",
 
@@ -175,6 +181,7 @@ export const OFFICIAL_EVENTS = [
   tag: "Tournament",
   time: "Multiple Days",
   location: "Venue announced via WhatsApp Group",
+  format: "Individual OTB (Blitz 3+2 Qualifiers / Rapid 10+5 Knockouts)",
   shortDesc:
     "The ultimate chess showdown. Compete with the best, outplay your opponents, and fight for a place in the IITK Candidates Tournament.",
 
@@ -248,18 +255,22 @@ const Events = () => {
                   <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
                       <div className="mb-3 flex flex-wrap items-center gap-3 text-[10px] font-bold uppercase tracking-widest font-label">
-                        <span
-                          className={
-                            event.tag === 'Tournament'
-                              ? 'text-primary'
-                              : event.tag === 'Workshop'
-                              ? 'text-on-surface'
-                              : 'text-blue-400'
-                          }
-                        >
-                          {event.tag}
-                        </span>
-                        <span className="text-on-surface-variant/40">•</span>
+                        {event.tag && (
+                          <>
+                            <span
+                              className={
+                                event.tag === 'Tournament'
+                                  ? 'text-primary'
+                                  : event.tag === 'Workshop'
+                                  ? 'text-on-surface'
+                                  : 'text-blue-400'
+                              }
+                            >
+                              {event.tag}
+                            </span>
+                            <span className="text-on-surface-variant/40">•</span>
+                          </>
+                        )}
                         <span className="text-on-surface-variant">{event.date}</span>
                       </div>
 
@@ -344,6 +355,20 @@ const Events = () => {
                               {event.location}
                             </p>
                           </div>
+
+                          {event.format && (
+                            <div className="rounded-xl border border-outline-variant/10 bg-[#131313] p-5">
+                              <h4 className="mb-2 flex items-center gap-2 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">
+                                <span className="material-symbols-outlined text-[14px] text-primary">
+                                  sports_esports
+                                </span>
+                                Match Format
+                              </h4>
+                              <p className="m-0 text-sm font-bold text-on-surface">
+                                {event.format}
+                              </p>
+                            </div>
+                          )}
 
                           <div className="rounded-xl border border-[#f2ca50]/20 bg-[#131313] p-5">
                             <h4 className="mb-2 flex items-center gap-2 text-[10px] font-label uppercase tracking-widest text-on-surface-variant">
