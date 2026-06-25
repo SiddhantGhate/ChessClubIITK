@@ -9,8 +9,8 @@ const UserProfile = () => {
   const [error, setError] = useState('');
   const fileInputRef = useRef(null);
 
-  // Use a placeholder email or retrieve the logged-in user identifier from app context/session
-  const userEmail = "student@iitk.ac.in"; 
+  // Extract the authenticated session email dynamically rather than hardcoding it
+  const userEmail = localStorage.getItem('logged_in_user_email') || "student@iitk.ac.in";
 
   useEffect(() => {
     const fetchProfile = async () => {
