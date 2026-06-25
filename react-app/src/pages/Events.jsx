@@ -6,6 +6,33 @@ import Footer from '../components/Footer';
 
 export const OFFICIAL_EVENTS = [
   {
+  id: 6,
+  title: "Fog of War Tournament",
+  date: "June 20, 2026",
+  tag: "Tournament",
+  time: "9:00 PM Onwards",
+  location: "chess.com",
+  shortDesc:
+    "A unique chess variant where players cannot see all of their opponent's pieces. Strategy, intuition, and a bit of luck will decide the winner.",
+
+  fullDesc:
+    "Want to try something offbeat? Chess Club IITK brings you Fog of War, a thrilling chess variant that blends strategy with uncertainty. Navigate through the fog, uncover your opponent's plans, and outsmart them in this exciting format. If you can't see your opponent's pieces, they probably can't see yours either—or can they?",
+
+  schedule: [
+    {
+      time: "Jun 20th",
+      activity: "Online Qualifier Arena (3+0) – 9:00 PM Onwards"
+    },
+    {
+      time: "Jun 21st",
+      activity: "Knockout Matches (3+2) – 9:00 PM Onwards"
+    }
+  ],
+
+  prizes:
+    "Bragging rights and the title of IITK Fog of War Champion!"
+},
+  {
     id: 1,
     title: "League of Legends 6.0",
     date: "August 7, 2026",
@@ -60,6 +87,119 @@ export const OFFICIAL_EVENTS = [
     prizes:
       "Top 3: Candidates. Pos 4-17: Chess Cup. Top 5: Gold Memberships. Top 50: Coupons."
   }
+,
+  {
+  id: 4,
+  title: "Speed Chess Championship",
+  date: "December 27, 2026",
+  tag: "Tournament",
+  time: "TBD",
+  location: "chess.com",
+  shortDesc:
+    "The ultimate battle of speed and precision. Compete in blitz and bullet formats to become the Speed Chess Champion of IITK!",
+  fullDesc:
+    "The Speed Chess Championship is IITK's premier fast-time-control event. Players will compete across blitz and bullet formats, testing their tactical sharpness, intuition, and nerves under intense time pressure. The championship begins with an open online qualifier arena, followed by the main championship stages over the next two days.",
+  schedule: [
+    {
+      time: "Dec 26th",
+      activity: "Qualifier Arena (1 Hour Blitz 3+1, 30 Minutes Bullet 1+1)"
+    },
+    {
+      time: "Dec 27th-28th",
+      activity: "Championship Stage (45 Minutes Blitz 3+1, 30 Minutes Bullet 1+1)"
+    },
+    
+    
+  ],
+  prizes: "Winner becomes the Speed Chess Champion of IITK!"
+},
+{
+  id: 8,
+  title: "FIDE Rated Open Rapid Chess Tournament 2027",
+  date: "February 7, 2027",
+  tag: "Tournament",
+  time: "9:00 AM Onwards",
+  location: "IIT Kanpur Campus, Uttar Pradesh, India",
+  shortDesc:
+    "The first-ever FIDE Rated Chess Tournament hosted by Chess Club IITK, featuring 9 Swiss rounds and a ₹2,00,000 prize pool.",
+
+  fullDesc:
+    "A new chapter in IIT Kanpur's chess legacy begins with the FIDE Rated Open Rapid Chess Tournament 2026. This premier over-the-board event features 9 Swiss rounds played in a 10+5 rapid format. Players from across the country will battle for rating points, glory, and a massive ₹2,00,000 prize fund. Rated games, real pressure, and serious rewards await.",
+
+  schedule: [
+    {
+      time: "Feb 7th",
+      activity: "9 Swiss Rounds (Rapid 10+5)"
+    }
+  ],
+
+  prizes:
+    "Prize Fund Worth ₹2,00,000!"
+}
+,
+{
+  id: 7,
+  title: "Chess Masters Premier League 5.0",
+  date: "March 3, 2027",
+  tag: "Tournament",
+  time: "7:00 PM Onwards",
+  location: "Online",
+  shortDesc:
+    "The flagship premier league of Chess Club IITK featuring top players, elite competition, and a massive ₹9+ Lakhs prize pool.",
+
+  fullDesc:
+    "Chess Masters Premier League 3.0 brings together some of the strongest chess players in the country for an exciting week-long competition. Featuring a prize pool exceeding ₹9 Lakhs and supported by leading chess organizations, the event promises high-level games, intense rivalries, and unforgettable moments. Participants will compete for glory, prestige, and a share of one of the largest prize pools in IITK chess history.",
+
+  schedule: [
+    {
+      time: "Mar 3rd",
+      activity: "Opening Round & League Stage Begins"
+    },
+    {
+      time: "Mar 4th-8th",
+      activity: "League Stage Matches"
+    },
+    {
+      time: "Mar 9th",
+      activity: "Playoffs & Grand Finals"
+    }
+  ],
+
+  prizes:
+    "Prize Pool Worth ₹9+ Lakhs!"
+},
+{
+  id: 5,
+  title: "IITK Chess Cup 2027",
+  date: "April 3, 2027",
+  tag: "Tournament",
+  time: "Multiple Days",
+  location: "Venue announced via WhatsApp Group",
+  shortDesc:
+    "The ultimate chess showdown. Compete with the best, outplay your opponents, and fight for a place in the IITK Candidates Tournament.",
+
+  fullDesc:
+    "Tired of quizzes and labs? Time to enter the ultimate chess showdown! The IITK Chess Cup 2026 begins with a 90-minute online blitz qualifier arena. The top 48 players will advance to the offline knockout stage, where every move matters. The top 4 finishers will earn a coveted spot in the IITK Candidates Tournament.",
+
+  schedule: [
+    {
+      time: "Apr 3rd",
+      activity: "90-Minute Online Blitz Arena (3+2 Qualifier)"
+    },
+    {
+      time: "Apr 4th",
+      activity: "Offline Knockout Matches (Rapid 10+5)"
+    },
+    {
+      time: "Apr 5th",
+      activity: "Final Knockout Matches (Rapid 10+5)"
+    }
+  ],
+
+  prizes:
+    "Top 4 players qualify for the IITK Candidates Tournament!"
+},
+
 ];
 
 const Events = () => {
@@ -180,7 +320,7 @@ const Events = () => {
                           <div className="space-y-3 rounded-xl border border-outline-variant/10 bg-[#131313] p-4 sm:p-5">
                             {event.schedule.map((item, idx) => (
                               <div key={idx} className="flex items-center gap-4">
-                                <span className="w-16 shrink-0 text-xs font-bold text-on-surface-variant">
+                                <span className="w-24 shrink-0 text-xs font-bold text-on-surface-variant">
                                   {item.time}
                                 </span>
                                 <span className="h-2 w-2 rounded-full bg-primary/50"></span>

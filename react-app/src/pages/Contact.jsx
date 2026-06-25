@@ -306,7 +306,7 @@ const ContactCard = ({ person, index }) => (
 const Contact = () => {
   return (
     <div>
-    <div className="px-12 pb-20 max-w-7xl mx-auto">
+    <div className="px-4 sm:px-6 md:px-12 pb-20 max-w-7xl mx-auto">
       {/* Coordinators Section */}
       <section className="mb-20 mt-12">
         <div className="flex flex-col items-center mb-12 text-center">

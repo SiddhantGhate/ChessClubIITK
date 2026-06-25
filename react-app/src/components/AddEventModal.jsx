@@ -61,7 +61,7 @@ const AddEventModal = ({ isOpen, onClose, onAddEvent, initialDate = '', editEven
         className="absolute inset-0 bg-[#0e0e0e]/80 backdrop-blur-sm"
         onClick={onClose}
       ></div>
-      <div className="bg-[#1c1b1b] border border-[#4d4635]/20 rounded-xl p-8 w-full max-w-md relative z-10 shadow-2xl">
+      <div className="bg-[#1c1b1b] border border-[#4d4635]/20 rounded-xl p-6 sm:p-8 w-[calc(100%-2rem)] sm:w-full max-w-md relative z-10 shadow-2xl">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-serif text-on-surface">{editEvent ? 'Edit Match' : 'Schedule Match'}</h2>
           <button onClick={onClose} className="text-on-surface-variant hover:text-error transition-colors outline-none">

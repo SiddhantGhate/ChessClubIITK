@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="bg-surface-container-lowest border-t border-outline-variant/10 px-12 py-16 lg:px-20">
+    <footer className="bg-surface-container-lowest border-t border-outline-variant/10 px-6 py-16 md:px-12 lg:px-20">
       <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
         {/* Brand Info */}
         <motion.div
@@ -196,7 +196,7 @@ const Footer = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-20px" }}
         transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.24 }}
-        className="mt-16 flex items-center justify-between border-t border-outline-variant/5 pt-8 text-[10px] uppercase tracking-widest text-on-surface-variant/40"
+        className="mt-16 flex flex-col sm:flex-row items-center sm:justify-between border-t border-outline-variant/5 pt-8 text-[10px] uppercase tracking-widest text-on-surface-variant/40 text-center sm:text-left gap-4"
       >
         <p>© 2026 IIT Kanpur Chess Club. All Rights Reserved.</p>
         <p>Designed for the Intellectual Elite</p>
