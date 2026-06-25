@@ -257,3 +257,63 @@ def reset_password():
     finally:
         if connection and connection.open:
             connection.close()
+
+@auth_bp.route('/user/profile/<email>', methods=['GET'])
+def get_user_profile(email):
+    """Fetches user identity dimensions for the profile interface"""
+    connection = None
+    try:
+        connection = get_db_connection()
+        with connection.cursor(pymysql.cursors.DictCursor) as cursor:
+            sql = "SELECT name, roll_no AS rollNo, contact, email, chess_username AS chesscom, avatar FROM users WHERE email = %s"
+            cursor.execute(sql, (email,))
+            profile = cursor.fetchone()
+
+            if not profile:
+                return jsonify({"error": "Profile records not found."}), 404
+
+            return jsonify(profile), 200
+
+    except Exception as e:
+        print(f"Profile Retrieval Failure: {e}")
+        return jsonify({"error": "Internal server error."}), 500
+    finally:
+        if connection and connection.open:
+            connection.close()
+
+
+@auth_bp.route('/user/profile/update', methods=['PUT'])
+def update_user_profile():
+    """Applies modified user identity details to the persistent database layer, explicitly locking email and chess_username"""
+    data = request.get_json()
+    email = data.get('email')
+    name = data.get('name')
+    roll_no = data.get('rollNo')
+    contact = data.get('contact')
+    avatar = data.get('avatar')
+
+    # Security check: Email is our tracking identifier; it cannot be missing
+    if not email:
+        return jsonify({"error": "Tracking identity string is missing."}), 400
+
+    connection = None
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            # REMOVED chess_username from the UPDATE statement to lock it down permanently
+            sql = """
+                UPDATE users 
+                SET name = %s, roll_no = %s, contact = %s, avatar = %s 
+                WHERE email = %s
+            """
+            cursor.execute(sql, (name, roll_no, contact, avatar, email))
+            connection.commit()
+
+            return jsonify({"message": "Profile metrics synced successfully!"}), 200
+
+    except Exception as e:
+        print(f"Profile Update Failure: {e}")
+        return jsonify({"error": "Internal server error."}), 500
+    finally:
+        if connection and connection.open:
+            connection.close()

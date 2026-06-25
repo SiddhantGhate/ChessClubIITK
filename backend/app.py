@@ -2,6 +2,7 @@ import os
 from flask import Flask
 from flask_cors import CORS
 from dotenv import load_dotenv
+from config.db import get_db_connection
 
 # Load your local .env file BEFORE anything else
 load_dotenv()
@@ -12,10 +13,29 @@ from routes.auth import auth_bp
 app = Flask(__name__)
 
 # Allow your local React app to connect
-CORS(app)
+CORS(
+    app,
+    origins=[
+        "https://chess-club-iitk-myfork.vercel.app"
+    ]
+)
 
 app.register_blueprint(auth_bp, url_prefix='/api')
 
 if __name__ == "__main__":
     # Local development settings with auto-reload enabled
     app.run(debug=True)
+
+
+@app.route("/health")
+def health():
+    return {"status": "ok"}
+
+
+
+@app.route("/db-test")
+def db_test():
+    conn = get_db_connection()
+    conn.close()
+    return {"database": "connected"}
+

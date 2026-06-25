@@ -1,37 +1,36 @@
 import { useState, useEffect, useRef } from 'react';
+import { API_BASE_URL } from '../config'; 
 import userAvatar from '../assets/new_user_avatar.png';
 
-const DEFAULT_PROFILE = {
-  name: "Inesh Aggarwal",
-  rollNo: "240465",
-  contact: "8437708390",
-  email: "ineshag24@iitk.ac.in",
-  chesscom: "Inesh1612",
-  avatar: userAvatar
-};
-
 const UserProfile = () => {
-  const [profile, setProfile] = useState(DEFAULT_PROFILE);
+  const [profile, setProfile] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [participations, setParticipations] = useState([{
-    id: "fide_legacy_1",
-    eventId: 999,
-    title: "FIDE Rated Open Rapid Tournament",
-    date: "7th Feb, 2026",
-    time: "Standard",
-    tag: "Tournament"
-  }]);
+  const [participations, setParticipations] = useState([]);
+  const [error, setError] = useState('');
   const fileInputRef = useRef(null);
 
+  // Extract the authenticated session email dynamically rather than hardcoding it
+  const userEmail = localStorage.getItem('logged_in_user_email') || "student@iitk.ac.in";
+
   useEffect(() => {
-    const saved = localStorage.getItem('chess-club-user-profile');
-    if (saved) {
+    const fetchProfile = async () => {
       try {
-        setProfile(JSON.parse(saved));
-      } catch (e) {
-        console.error("Could not parse profile");
+        const response = await fetch(`${API_BASE_URL}/api/user/profile/${userEmail}`);
+        if (!response.ok) throw new Error("Could not retrieve profile properties");
+        
+        const data = await response.json();
+        setProfile({
+          ...data,
+          avatar: data.avatar || userAvatar
+        });
+      } catch (err) {
+        console.error(err);
+        setError("Failed loading profile from server.");
       }
-    }
+    };
+
+    fetchProfile();
+
     const savedParts = localStorage.getItem('chess-club-participations');
     if (savedParts) {
       try {
@@ -39,12 +38,34 @@ const UserProfile = () => {
       } catch (e) {
         console.error("Could not parse participations");
       }
+    } else {
+      setParticipations([{
+        id: "fide_legacy_1",
+        eventId: 999,
+        title: "FIDE Rated Open Rapid Tournament",
+        date: "7th Feb, 2026",
+        time: "Standard",
+        tag: "Tournament"
+      }]);
     }
-  }, []);
+  }, [userEmail]);
 
-  const handleSave = () => {
-    localStorage.setItem('chess-club-user-profile', JSON.stringify(profile));
-    setIsEditing(false);
+  const handleSave = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/user/profile/update`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(profile),
+      });
+
+      if (!response.ok) throw new Error("Failed saving database modifications");
+      
+      setIsEditing(false);
+      setError('');
+    } catch (err) {
+      console.error(err);
+      setError("Unable to save adjustments to server database.");
+    }
   };
 
   const handleImageUpload = (e) => {
@@ -58,13 +79,17 @@ const UserProfile = () => {
     }
   };
 
+  if (!profile) {
+    return <div className="text-center p-12 text-on-surface">Loading Chess Sanctum Profile...</div>;
+  }
+
   return (
     <div className="px-12 py-12 max-w-6xl mx-auto">
+      {error && <div className="mb-4 text-red-500 text-sm bg-red-500/10 p-3 rounded-lg text-center font-semibold">{error}</div>}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Left Column: Player Identity */}
         <div className="lg:col-span-4 space-y-8">
           <div className="bg-gradient-to-b from-[#201f1f] to-[#131313] rounded-3xl p-8 border border-[#4d4635]/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden group">
-            {/* Ambient Background Glow */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-[#d4af37]/10 rounded-bl-full blur-3xl transition-opacity duration-700"></div>
             
             <div className="flex flex-col items-center text-center relative z-10">
@@ -75,7 +100,7 @@ const UserProfile = () => {
                 >
                   <img 
                     alt="Player Profile Avatar" 
-                    className={`w-full h-full object-cover transition-all duration-500 ${isEditing ? 'brightness-50' : 'brightness-90 group-hover:brightness-100'}`} 
+                    className={`w-full h-full object-cover transition-all duration-500 ${isEditing ? 'brightness-50' : 'brightness-90 group-hover:brightness-100'}`}
                     src={profile.avatar}
                   />
                   {isEditing && (
@@ -88,7 +113,7 @@ const UserProfile = () => {
 
                 <input 
                   type="file" 
-                  ref={fileInputRef} 
+                  ref={fileInputRef}
                   className="hidden" 
                   accept="image/*"
                   onChange={handleImageUpload}
@@ -127,20 +152,28 @@ const UserProfile = () => {
                       className="text-[11px] font-label uppercase tracking-widest bg-transparent border-b border-outline-variant/30 text-on-surface pb-1 focus:outline-none focus:border-primary w-full transition-colors text-center"
                       placeholder="Contact Number"
                     />
-                    <input 
-                      type="email" 
-                      value={profile.email}
-                      onChange={(e) => setProfile({...profile, email: e.target.value})}
-                      className="text-[11px] font-label uppercase tracking-widest bg-transparent border-b border-outline-variant/30 text-on-surface pb-1 focus:outline-none focus:border-primary w-full transition-colors text-center"
-                      placeholder="IITK Email ID"
-                    />
-                    <input 
-                      type="text" 
-                      value={profile.chesscom}
-                      onChange={(e) => setProfile({...profile, chesscom: e.target.value})}
-                      className="text-[11px] font-label uppercase tracking-widest bg-transparent border-b border-outline-variant/30 text-primary pb-1 focus:outline-none focus:border-primary w-full transition-colors text-center"
-                      placeholder="Chess.com ID"
-                    />
+                    {/* EMAIL INPUT: Locked down with 'disabled' flag */}
+                    <div className="w-full relative">
+                      <input 
+                        type="email" 
+                        value={profile.email}
+                        disabled
+                        className="text-[11px] font-label uppercase tracking-widest bg-transparent border-b border-outline-variant/10 text-on-surface-variant/40 pb-1 focus:outline-none w-full text-center cursor-not-allowed select-none"
+                        placeholder="IITK Email ID"
+                      />
+                      <span className="absolute right-2 bottom-1.5 text-[14px] text-on-surface-variant/30 material-symbols-outlined">lock</span>
+                    </div>
+                    {/* CHESS.COM INPUT: Locked down with 'disabled' flag */}
+                    <div className="w-full relative">
+                      <input 
+                        type="text" 
+                        value={profile.chesscom}
+                        disabled
+                        className="text-[11px] font-label uppercase tracking-widest bg-transparent border-b border-outline-variant/10 text-primary/40 pb-1 focus:outline-none w-full text-center cursor-not-allowed select-none"
+                        placeholder="Chess.com ID"
+                      />
+                      <span className="absolute right-2 bottom-1.5 text-[14px] text-primary/30 material-symbols-outlined">lock</span>
+                    </div>
                   </div>
                 ) : (
                   <div className="flex flex-col gap-4">

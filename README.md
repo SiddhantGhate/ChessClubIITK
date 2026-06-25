@@ -1,6 +1,15 @@
 # ChessClubIITK
 
-# ♟️ Chess Club IITK - Developer Setup Guide
+
+# Setting up the backend deployment
+
+1) Go to your vercel deployment project, then Environment variables on the left side pane. Add an Environment Variable, name it as "VITE_API_URL" without the quotation marks and ask Divyesh for it's value.
+2) In the repository, go to backend->app.py. Under CORS, replace the url in the origins with the url of your host domain. Only this URL will be allowed to access the service. PS: if you go to inspect -> console on the website, you'll see a error message with CORS on it if it's setup incorrectly. Make sure there are no trailing backslashes. In future, maybe this can also be turned into an environment variable.
+3) In Google Run, I have added several environment variables, mostly those in the .env file in the local repo. Change this only if required.
+
+Note: I formatted the code a lot during backend deployment. The below instructions for local testing may or may not work as I might have hardcoded a few variables.
+
+# ♟️ Chess Club IITK - Developer Setup Guide for local testing
 
 Welcome to the Sanctum! This guide will get your local development environment set up so you can safely write code and connect to our live cloud database without needing any passwords, JSON keys, or IP whitelisting.
 
