@@ -71,6 +71,18 @@ const STREET_CHESS_2_KEYS = Object.keys(STREET_CHESS_2_GLOB).sort((a, b) => {
 });
 const STREET_CHESS_2_PHOTOS = STREET_CHESS_2_KEYS.map(key => STREET_CHESS_2_GLOB[key].default);
 
+// Dynamically import all images in the Championship 2026 folder using Vite's glob import
+const CHAMPIONSHIP_2026_GLOB = import.meta.glob('../Gallery/Championship 2026/*.{png,jpg,jpeg,PNG,JPG,JPEG}', { eager: true });
+const CHAMPIONSHIP_2026_KEYS = Object.keys(CHAMPIONSHIP_2026_GLOB).sort((a, b) => {
+  const matchA = a.match(/\/(\d+)\.\w+$/);
+  const matchB = b.match(/\/(\d+)\.\w+$/);
+  if (matchA && matchB) {
+    return parseInt(matchA[1], 10) - parseInt(matchB[1], 10);
+  }
+  return a.localeCompare(b);
+});
+const CHAMPIONSHIP_2026_PHOTOS = CHAMPIONSHIP_2026_KEYS.map(key => CHAMPIONSHIP_2026_GLOB[key].default);
+
 // Dynamically import other casual photos using Vite's glob import
 const OTHER_IMAGES_GLOB = import.meta.glob('../Gallery/OTHER PHOTOS/*.{png,jpg,jpeg,PNG,JPG,JPEG}', { eager: true });
 const OTHER_PHOTOS = Object.values(OTHER_IMAGES_GLOB).map(module => module.default);
@@ -176,12 +188,32 @@ const CATEGORIES = ['All', 'Tournaments', 'Workshops', 'Socials'];
 const CURRENT_YEAR_EVENTS = [
   {
     id: 'current-street-chess',
+    category: 'Socials',
     title: 'Street Chess 2026',
     tag: 'Street Showcase',
     date: 'June 10, 2026',
     coverImage: STREET_CHESS_PHOTOS.length > 0 ? STREET_CHESS_PHOTOS[0] : workshopImg,
     photos: STREET_CHESS_PHOTOS,
     description: 'Bringing the game of chess to the campus streets! Casual, blitz, and speed matchplays on public tables open for all passersby.'
+  },
+  {
+    id: 'current-chess-hour',
+    category: 'Socials',
+    title: 'Chess Hour',
+    tag: 'Social Meetup',
+    date: 'Aug 8, 2026',
+    coverImage: CHESS_HOUR_PHOTOS.length > 0 ? CHESS_HOUR_PHOTOS[0] : workshopImg,
+    photos: CHESS_HOUR_PHOTOS,
+    description: 'Weekly casual over-the-board meetups, blitz sessions, and friendly sparring.'
+  },
+  {
+    id: 'current-street-chess-2',
+    category: 'Socials',
+    title: 'Street Chess 2',
+    tag: 'Street Showcase',
+    coverImage: STREET_CHESS_2_PHOTOS.length > 0 ? STREET_CHESS_2_PHOTOS[0] : workshopImg,
+    photos: STREET_CHESS_2_PHOTOS,
+    description: 'Taking over the streets once again! Friendly matchplays, lightning blitz tables, and casual chess out in the open campus air.'
   }
 ];
 
@@ -333,21 +365,12 @@ const PREVIOUS_YEARS_DATA = {
       image: CANDIDATES_2025_PHOTOS[0]
     },
     {
-      id: "event-4",
-      category: "SOCIALS",
-      title: "Chess Hour",
-      description: "Weekly casual over-the-board meetups, blitz sessions, and friendly sparring.",
-      photos: CHESS_HOUR_PHOTOS,
-      image: CHESS_HOUR_PHOTOS[0],
-      date: "Aug 8, 2026"
-    },
-    {
-      id: "event-5",
-      category: "SOCIALS",
-      title: "Street Chess 2",
-      description: "Taking over the streets once again! Friendly matchplays, lightning blitz tables, and casual chess out in the open campus air.",
-      photos: STREET_CHESS_2_PHOTOS,
-      image: STREET_CHESS_2_PHOTOS[0]
+      id: "event-6",
+      category: "TOURNAMENTS",
+      title: "IITK Championship",
+      description: "The crowning event of the IITK Chess season. The ultimate battle for the title of campus champion.",
+      photos: CHAMPIONSHIP_2026_PHOTOS,
+      image: CHAMPIONSHIP_2026_PHOTOS[0]
     }
   ]
 };
@@ -879,64 +902,73 @@ const Gallery = () => {
 
       {/* Current Season Exhibition (New Section) */}
       <AnimatePresence mode="wait">
-        {(activeCategory === 'All' || activeCategory === 'Socials') && (
-          <motion.section
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="mb-24 max-w-5xl mx-auto"
-          >
-            <div className="text-center mb-10">
-              <h2 className="text-4xl font-serif text-on-surface">
-                Active Season
-              </h2>
-            </div>
+        {(() => {
+          const filteredEvents = CURRENT_YEAR_EVENTS.filter(event => 
+            activeCategory === 'All' || 
+            (event.category && event.category.toLowerCase() === activeCategory.toLowerCase())
+          );
+          if (filteredEvents.length === 0) return null;
+          return (
+            <motion.section
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="mb-24 max-w-5xl mx-auto"
+            >
+              <div className="text-center mb-10">
+                <h2 className="text-4xl font-serif text-on-surface">
+                  Active Season
+                </h2>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {CURRENT_YEAR_EVENTS.map((event) => (
-                <div
-                  key={event.id}
-                  className="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/10 hover:border-primary/20 hover:shadow-[0_12px_40px_rgba(242,202,80,0.08)] transition-all duration-300 flex flex-col justify-between group relative shadow-lg"
-                >
-                  <div className="relative aspect-[16/11] overflow-hidden">
-                    <img
-                      src={event.coverImage}
-                      alt={event.title}
-                      className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent pointer-events-none opacity-80" />
-                    <div className="absolute top-3 left-3 bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm font-label text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-sm">
-                      {event.tag}
-                    </div>
-                  </div>
-
-                  <div className="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-label text-on-surface-variant/60 tracking-wider block mb-2 font-semibold">
-                        {event.date}
-                      </span>
-                      <h3 className="text-lg font-serif font-bold text-on-surface mb-3 group-hover:text-primary transition-colors leading-tight">
-                        {event.title}
-                      </h3>
-                      <p className="text-xs text-on-surface-variant leading-relaxed mb-6 line-clamp-3">
-                        {event.description}
-                      </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {filteredEvents.map((event) => (
+                  <div
+                    key={event.id}
+                    className="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/10 hover:border-primary/20 hover:shadow-[0_12px_40px_rgba(242,202,80,0.08)] transition-all duration-300 flex flex-col justify-between group relative shadow-lg"
+                  >
+                    <div className="relative aspect-[16/11] overflow-hidden">
+                      <img
+                        src={event.coverImage}
+                        alt={event.title}
+                        className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent pointer-events-none opacity-80" />
+                      <div className="absolute top-3 left-3 bg-primary/10 text-primary border border-primary/20 backdrop-blur-sm font-label text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-sm">
+                        {event.tag}
+                      </div>
                     </div>
 
-                    <button
-                      onClick={() => openExhibition(event.photos, event.title)}
-                      className="w-full bg-surface-container hover:bg-primary text-on-surface hover:text-[#3c2f00] font-label text-[10px] font-bold uppercase tracking-widest py-3 rounded-xl border border-outline-variant/10 hover:border-primary transition-all flex items-center justify-center gap-2"
-                    >
-                      <span className="material-symbols-outlined text-sm font-bold">filter_hdr</span>
-                      <span>View event archive</span>
-                    </button>
+                    <div className="p-6 flex-1 flex flex-col justify-between">
+                      <div>
+                        {event.date && (
+                          <span className="text-[10px] font-label text-on-surface-variant/60 tracking-wider block mb-2 font-semibold">
+                            {event.date}
+                          </span>
+                        )}
+                        <h3 className="text-lg font-serif font-bold text-on-surface mb-3 group-hover:text-primary transition-colors leading-tight">
+                          {event.title}
+                        </h3>
+                        <p className="text-xs text-on-surface-variant leading-relaxed mb-6 line-clamp-3">
+                          {event.description}
+                        </p>
+                      </div>
+
+                      <button
+                        onClick={() => openExhibition(event.photos, event.title)}
+                        className="w-full bg-surface-container hover:bg-primary text-on-surface hover:text-[#3c2f00] font-label text-[10px] font-bold uppercase tracking-widest py-3 rounded-xl border border-outline-variant/10 hover:border-primary transition-all flex items-center justify-center gap-2"
+                      >
+                        <span className="material-symbols-outlined text-sm font-bold">photo_library</span>
+                        <span>View Gallery</span>
+                      </button>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </motion.section>
-        )}
-        </AnimatePresence>
+                ))}
+              </div>
+            </motion.section>
+          );
+        })()}
+      </AnimatePresence>
 
       {/* Past Seasons Section */}
       <section className="mb-24 max-w-7xl mx-auto px-4 md:px-0">
