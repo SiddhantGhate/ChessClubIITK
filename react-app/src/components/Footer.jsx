@@ -37,7 +37,7 @@ const Footer = () => {
           </h5>
           <ul className="space-y-3 text-sm text-on-surface-variant">
             <li>
-              <Link to="/blog/16" className="cursor-pointer transition-colors hover:text-primary">
+              <Link to="/blog/23" className="cursor-pointer transition-colors hover:text-primary">
                 Our History
               </Link>
             </li>

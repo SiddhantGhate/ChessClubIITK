@@ -168,7 +168,10 @@ const BlogPost = () => {
         const response = await fetch(`${API_BASE_URL}/api/blogs`);
         if (response.ok) {
           const posts = await response.json();
-          const matchingNode = posts.find(p => String(p.id) === String(id));
+          let matchingNode = posts.find(p => String(p.id) === String(id));
+          if (!matchingNode && (id === 'history' || id === '16' || id === '23')) {
+            matchingNode = posts.find(p => p.title && p.title.includes("The Story of Chess Club IITK"));
+          }
           if (matchingNode) {
             setDbPost(matchingNode);
             setEditTitle(matchingNode.title || "");
