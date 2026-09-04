@@ -143,7 +143,7 @@ const Events = () => {
     if (location.state?.openRegisterLol && isLoggedIn && token) {
       setActiveTab('upcoming');
       handleRegisterLolClick();
-      window.history.replaceState({}, document.title);
+      navigate(location.pathname, { replace: true, state: {} });
     }
   }, [location.state, isLoggedIn, token]);
 
@@ -163,7 +163,7 @@ const Events = () => {
         }, 300);
       }
       handleRegisterFclClick();
-      window.history.replaceState({}, document.title);
+      navigate(location.pathname, { replace: true, state: {} });
     }
   }, [location.state, isLoggedIn, token, events]);
 
@@ -202,7 +202,7 @@ const Events = () => {
         setHighlightedId(null);
       }, 2500);
       
-      window.history.replaceState({}, document.title);
+      navigate(location.pathname, { replace: true, state: {} });
       return () => clearTimeout(highlightTimer);
     }
   }, [location.state, events]);

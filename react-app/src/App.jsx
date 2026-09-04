@@ -97,10 +97,14 @@ function App() {
   const [isAppReady, setIsAppReady] = useState(false);
 
   useEffect(() => {
-    // 1. Database Connection check promise
-    const dbPromise = fetch(`${API_BASE_URL}/db-test`)
-      .then(res => res.ok ? res.json() : null)
-      .catch(() => null);
+    // 1. Database Connection check promise with 2s timeout safeguard
+    const dbPromise = new Promise((resolve) => {
+      const timer = setTimeout(() => resolve(null), 2000);
+      fetch(`${API_BASE_URL}/db-test`)
+        .then(res => res.ok ? res.json() : null)
+        .then(data => { clearTimeout(timer); resolve(data); })
+        .catch(() => { clearTimeout(timer); resolve(null); });
+    });
 
     // 2. Image preloading promise
     const preloadImage = (src) => {
