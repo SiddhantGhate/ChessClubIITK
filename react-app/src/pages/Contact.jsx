@@ -28,7 +28,6 @@ import prajwalImg from "../assets/secretaries/prajwal.jpeg";
 import pratikImg from "../assets/secretaries/pratik.jpg";
 import swayamImg from "../assets/secretaries/swayam.JPG";
 import siddhantImg from "../assets/secretaries/siddhant.jpg";
-import shaoniImg from "../assets/secretaries/shaoni.jpg";
 import dipinImg from "../assets/secretaries/dipin.jpg";
 import lakshyaImg from "../assets/secretaries/lakshya.jpg";
 import Footer from '../components/Footer';
@@ -290,16 +289,6 @@ const SECRETARIES = [
     email: "pratikd24@iitk.ac.in",
     instagram: "https://www.instagram.com/prattsss__/",
     linkedin: "https://www.linkedin.com/in/pratik-dhanuka-7789023b5/"
-  },
-  {
-    id: "sec-23",
-    name: "Shaoni Mukherjee",
-    role: "Secretary",
-    funnyDescription: `"Life is like chess. I don't know how to play chess."`,
-    image: shaoniImg,
-    email: "shaonim24@iitk.ac.in",
-    instagram: "https://www.instagram.com/shaoni_mukherjee/",
-    linkedin: "https://www.linkedin.com/in/shaoni-mukherjee/"
   },
   {
     id: "sec-24",
