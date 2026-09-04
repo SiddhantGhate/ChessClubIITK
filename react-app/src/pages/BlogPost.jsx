@@ -119,9 +119,11 @@ const BlogPost = () => {
 
   useEffect(() => {
     const fetchPostData = async () => {
-      // 1. Check legacy posts first if id is non-numerical slug
-      if (LEGACY_POSTS_MAP[id]) {
-        const leg = LEGACY_POSTS_MAP[id];
+      const targetId = (id === '16' || id === 'history') ? '23' : id;
+
+      // 1. Check legacy posts first if targetId is non-numerical slug
+      if (LEGACY_POSTS_MAP[targetId]) {
+        const leg = LEGACY_POSTS_MAP[targetId];
         setDbPost(leg);
         setEditTitle(leg.title);
         setEditSubtitle(leg.subtitle || leg.tag || "");
@@ -135,7 +137,7 @@ const BlogPost = () => {
 
       // 2. Fetch from single blog endpoint
       try {
-        const response = await fetch(`${API_BASE_URL}/api/blogs/${id}`);
+        const response = await fetch(`${API_BASE_URL}/api/blogs/${targetId}`);
         if (response.ok) {
           const matchingNode = await response.json();
           if (matchingNode && matchingNode.id) {
