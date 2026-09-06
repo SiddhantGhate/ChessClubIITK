@@ -22,6 +22,7 @@ import madhavImg from "../assets/secretaries/madhav.jpg";
 import mayankBhakhandImg from "../assets/secretaries/mayank_bhakhand.jpeg";
 import mayankGautamImg from "../assets/secretaries/mayank_gautam.webp";
 import mishthyImg from "../assets/secretaries/mishthy.jpg";
+import miteshImg from "../assets/secretaries/mitesh.jpg";
 import nishantImg from "../assets/secretaries/nishant.jpg";
 import piyushImg from "../assets/secretaries/piyush.jpg";
 import prajwalImg from "../assets/secretaries/prajwal.jpeg";
@@ -249,6 +250,16 @@ const SECRETARIES = [
     email: "mishthyk24@iitk.ac.in",
     instagram: "https://www.instagram.com/mishthy_khatwa/",
     linkedin: "https://www.linkedin.com/in/mishthy-khatwa/"
+  },
+  {
+    id: "sec-18b",
+    name: "Mitesh Jitendra Jethawa",
+    role: "Secretary",
+    funnyDescription: `"Life is like chess, every move counts."`,
+    image: miteshImg,
+    email: "jethawa25@iitk.ac.in",
+    instagram: "https://www.instagram.com/jjmitesh_19",
+    linkedin: "https://www.linkedin.com/in/miteshjethawa"
   },
   {
     id: "sec-19",
